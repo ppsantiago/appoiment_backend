@@ -14,22 +14,22 @@ This project is a simple API developed with Node.js and Express, which allows ma
 
 1. Clone the repository:
 
-   @@@
+   ```
    git clone <REPOSITORY_URL>
    cd <REPOSITORY_NAME>
-   @@@
+   ```
 
 2. Install the dependencies:
 
-   @@@
+   ```
    npm install
-   @@@
+   ```
 
 3. Start the server:
 
-   @@@
+   ```
    node app.js
-   @@@
+   ```
 
    The server will be available at `http://localhost:3000`.
 
@@ -41,7 +41,7 @@ This project is a simple API developed with Node.js and Express, which allows ma
 
 - **Description**: Returns the list of all available rooms.
 - **Response**:
-  @@@
+  ```
   {
       "rooms": [
           {
@@ -51,7 +51,7 @@ This project is a simple API developed with Node.js and Express, which allows ma
           }
       ]
   }
-  @@@
+  ```
 
 ### 2. Check room availability
 
@@ -59,7 +59,7 @@ This project is a simple API developed with Node.js and Express, which allows ma
 
 - **Description**: Shows existing reservations for a room (by its ID).
 - **Response**:
-  @@@
+  ```
   {
       "availability": [
           {
@@ -70,7 +70,7 @@ This project is a simple API developed with Node.js and Express, which allows ma
           }
       ]
   }
-  @@@
+  ```
 
 ### 3. Register a new reservation
 
@@ -78,20 +78,20 @@ This project is a simple API developed with Node.js and Express, which allows ma
 
 - **Description**: Creates a new reservation for a room.
 - **Body**:
-  @@@
+  ```
   {
       "room_id": 1,
       "guest_name": "Juan Pérez",
       "start_date": "2024-09-10",
       "end_date": "2024-09-15"
   }
-  @@@
+  ```
 - **Response**:
-  @@@
+  ```
   {
       "reservation_id": 1
   }
-  @@@
+  ```
 
 ### 4. Add a new room
 
@@ -99,18 +99,18 @@ This project is a simple API developed with Node.js and Express, which allows ma
 
 - **Description**: Adds a new room to the system.
 - **Body**:
-  @@@
+  ```
   {
       "name": "Room 2",
       "description": "Room with a sea view"
   }
-  @@@
+  ```
 - **Response**:
-  @@@
+  ```
   {
       "room_id": 2
   }
-  @@@
+  ```
 
 ## Models
 
