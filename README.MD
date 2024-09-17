@@ -15,8 +15,8 @@ This project is a simple API developed with Node.js and Express, which allows ma
 1. Clone the repository:
 
    ```
-   git clone <REPOSITORY_URL>
-   cd <REPOSITORY_NAME>
+   git clone https://github.com/ppsantiago/appoiment_backend
+   cd appoiment_backend
    ```
 
 2. Install the dependencies:
@@ -156,8 +156,8 @@ Este proyecto es una API simple desarrollada con Node.js y Express, que permite 
 1. Clona el repositorio:
 
    ```
-   git clone <URL_DEL_REPOSITORIO>
-   cd <NOMBRE_DEL_REPOSITORIO>
+   git clone https://github.com/ppsantiago/appoiment_backend
+   cd appoiment_backend
    ```
 
 2. Instala las dependencias:
