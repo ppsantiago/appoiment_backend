@@ -1,0 +1,36 @@
+name: Build and Deploy Docker Image
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Set up SSH
+        uses: webfactory/ssh-agent@v0.8.1
+        with:
+          ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
+
+      - name: Build Docker image and deploy
+        run: |
+          ssh -o StrictHostKeyChecking=no user@your-server-ip << 'EOF'
+            # Navegar al directorio de tu aplicación
+            cd /ruta/de/tu/app
+
+            # Detener y eliminar el contenedor antiguo
+            docker stop app-container || true
+            docker rm app-container || true
+
+            # Construir la nueva imagen de Docker
+            docker build -t app-image:latest .
+
+            # Iniciar un nuevo contenedor en la red 'net-app'
+            docker run -d --name app-container --network net-app app-image:latest
+          EOF

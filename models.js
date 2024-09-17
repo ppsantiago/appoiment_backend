@@ -5,7 +5,7 @@ const path = require('path');
 // Inicializa Sequelize con SQLite
 const sequelize = new Sequelize({
     dialect: 'sqlite',
-    storage: path.join(__dirname, 'database.sqlite')
+    storage: path.join(__dirname, 'appoint_db.sqlite')
 });
 
 // Define el modelo para Habitaciones
