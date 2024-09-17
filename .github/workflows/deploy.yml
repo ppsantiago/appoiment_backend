@@ -20,17 +20,17 @@ jobs:
 
       - name: Build Docker image and deploy
         run: |
-          ssh -o StrictHostKeyChecking=no user@your-server-ip << 'EOF'
+          ssh -o StrictHostKeyChecking=no 137.184.221.165 << 'EOF'
             # Navegar al directorio de tu aplicación
-            cd /ruta/de/tu/app
+            cd /tools/node_appoiment/appoiment_backend
 
             # Detener y eliminar el contenedor antiguo
-            docker stop app-container || true
-            docker rm app-container || true
+            docker stop appoiment_app || true
+            docker rm appoiment_app || true
 
             # Construir la nueva imagen de Docker
             docker build -t app-image:latest .
 
             # Iniciar un nuevo contenedor en la red 'net-app'
-            docker run -d --name app-container --network net-app app-image:latest
+            docker run -d --name appoiment_app --network net-app app-image:latest
           EOF
